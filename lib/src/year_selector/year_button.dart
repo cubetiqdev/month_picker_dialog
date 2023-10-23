@@ -49,6 +49,17 @@ class YearButton extends StatelessWidget {
     final Color backgroundColor =
         controller.selectedMonthBackgroundColor ?? theme.colorScheme.secondary;
     final ButtonStyle yearStyle = TextButton.styleFrom(
+      textStyle: controller.itemTextStyle?.copyWith(
+          color: year == controller.selectedDate.year
+              ? theme.textTheme.labelLarge!
+                  .copyWith(
+                    color: controller.selectedMonthTextColor ??
+                        theme.colorScheme.onSecondary,
+                  )
+                  .color
+              : year == DateTime.now().year
+                  ? backgroundColor
+                  : controller.unselectedMonthTextColor),
       foregroundColor: year == controller.selectedDate.year
           ? theme.textTheme.labelLarge!
               .copyWith(

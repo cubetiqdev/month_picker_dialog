@@ -50,6 +50,20 @@ class MonthButton extends StatelessWidget {
     final Color backgroundColor =
         controller.selectedMonthBackgroundColor ?? theme.colorScheme.secondary;
     final ButtonStyle monthStyle = TextButton.styleFrom(
+      textStyle: controller.itemTextStyle?.copyWith(
+        color: date.month == controller.selectedDate.month &&
+                date.year == controller.selectedDate.year
+            ? theme.textTheme.labelLarge!
+                .copyWith(
+                  color: controller.selectedMonthTextColor ??
+                      theme.colorScheme.onSecondary,
+                )
+                .color
+            : date.month == DateTime.now().month &&
+                    date.year == DateTime.now().year
+                ? backgroundColor
+                : controller.unselectedMonthTextColor,
+      ),
       foregroundColor: date.month == controller.selectedDate.month &&
               date.year == controller.selectedDate.year
           ? theme.textTheme.labelLarge!

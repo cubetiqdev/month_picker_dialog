@@ -25,6 +25,7 @@ class MonthpickerController {
     this.cancelWidget,
     this.customHeight,
     this.customWidth,
+    this.itemTextStyle,
     required this.yearFirst,
     required this.roundedCornersRadius,
     required this.forceSelectedDate,
@@ -41,7 +42,12 @@ class MonthpickerController {
   final bool Function(DateTime)? selectableMonthPredicate;
   final ButtonStyle? Function(DateTime)? monthStylePredicate;
   final ButtonStyle? Function(int)? yearStylePredicate;
-  final bool capitalizeFirstLetter, yearFirst, forceSelectedDate, hideHeaderRow, useMaterial3;
+  final bool capitalizeFirstLetter,
+      yearFirst,
+      forceSelectedDate,
+      hideHeaderRow,
+      useMaterial3;
+  final TextStyle? itemTextStyle;
   final Color? headerColor,
       headerTextColor,
       selectedMonthBackgroundColor,
