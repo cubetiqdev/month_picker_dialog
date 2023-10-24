@@ -21,10 +21,12 @@ class HeaderSelectedDate extends StatelessWidget {
           : DateFormat.yMMM(localeString)
               .format(controller.selectedDate)
               .toLowerCase(),
-      style: controller.headerTextColor == null
-          ? theme.primaryTextTheme.titleMedium
-          : theme.primaryTextTheme.titleMedium!
-              .copyWith(color: controller.headerTextColor),
+      style: controller.headerDateTextStyle != null
+          ? controller.headerDateTextStyle
+          : controller.headerTextColor == null
+              ? theme.primaryTextTheme.titleMedium
+              : theme.primaryTextTheme.titleMedium!
+                  .copyWith(color: controller.headerTextColor),
     );
   }
 }

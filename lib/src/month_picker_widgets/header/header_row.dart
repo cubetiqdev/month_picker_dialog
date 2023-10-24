@@ -42,10 +42,11 @@ class HeaderRow extends StatelessWidget {
             child: Text(
               DateFormat.y(localeString)
                   .format(DateTime(monthProvider.pageLimit.upLimit)),
-              style: headline5,
+              style: controller.headerYearTextStyle ?? headline5,
             ),
           ),
           HeaderArrows(
+            size: controller.iconSize,
             arrowcolors: arrowcolors,
             onUpButtonPressed: controller.onUpButtonPressed,
             onDownButtonPressed: controller.onDownButtonPressed,
@@ -73,6 +74,7 @@ class HeaderRow extends StatelessWidget {
             ],
           ),
           HeaderArrows(
+            size: controller.iconSize,
             arrowcolors: arrowcolors,
             onUpButtonPressed: controller.onUpButtonPressed,
             onDownButtonPressed: controller.onDownButtonPressed,

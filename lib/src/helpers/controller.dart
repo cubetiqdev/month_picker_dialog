@@ -26,6 +26,9 @@ class MonthpickerController {
     this.customHeight,
     this.customWidth,
     this.itemTextStyle,
+    this.headerDateTextStyle,
+    this.headerYearTextStyle,
+    this.iconSize,
     required this.yearFirst,
     required this.roundedCornersRadius,
     required this.forceSelectedDate,
@@ -48,6 +51,9 @@ class MonthpickerController {
       hideHeaderRow,
       useMaterial3;
   final TextStyle? itemTextStyle;
+  final TextStyle? headerDateTextStyle;
+  final TextStyle? headerYearTextStyle;
+  final double? iconSize;
   final Color? headerColor,
       headerTextColor,
       selectedMonthBackgroundColor,

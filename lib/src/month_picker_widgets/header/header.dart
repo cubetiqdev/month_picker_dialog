@@ -51,6 +51,7 @@ class PickerHeader extends StatelessWidget {
             : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
                   HeaderSelectedDate(
                     theme: theme,

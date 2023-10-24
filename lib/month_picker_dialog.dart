@@ -77,6 +77,9 @@ Future<DateTime?> showMonthPicker({
   double? customHeight,
   double? customWidth,
   TextStyle? itemTextStyle,
+  TextStyle? headerDateTextStyle,
+  TextStyle? headerYearTextStyle,
+  double? iconSize,
   bool yearFirst = false,
   bool dismissible = false,
   double roundedCornersRadius = 0,
@@ -107,6 +110,9 @@ Future<DateTime?> showMonthPicker({
       customHeight: customHeight,
       customWidth: customWidth,
       itemTextStyle: itemTextStyle,
+      headerDateTextStyle: headerDateTextStyle,
+      headerYearTextStyle: headerYearTextStyle,
+      iconSize: iconSize,
       yearFirst: yearFirst,
       roundedCornersRadius: roundedCornersRadius,
       forceSelectedDate: forceSelectedDate,
@@ -194,19 +200,21 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
                     Radius.circular(widget.controller.roundedCornersRadius),
               ),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
-          PickerPager(
-            selector: _selector,
-            theme: widget.controller.theme,
-            controller: widget.controller,
-          ),
-          PickerButtonBar(
-            controller: widget.controller,
-          ),
-        ],
+      child: Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            PickerPager(
+              selector: _selector,
+              theme: widget.controller.theme,
+              controller: widget.controller,
+            ),
+            PickerButtonBar(
+              controller: widget.controller,
+            ),
+          ],
+        ),
       ),
     );
 
