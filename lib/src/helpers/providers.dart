@@ -27,7 +27,7 @@ class YearUpDownPageProvider extends ChangeNotifier {
 
 ///Provider that controlls the up down state of the header when the monyh selector is on the dialog
 class MonthUpDownPageProvider extends ChangeNotifier {
-  final UpDownPageLimit _pageLimit = UpDownPageLimit(0, 0);
+  final UpDownPageLimit _pageLimit = UpDownPageLimit(DateTime.now().year, 0);
   final UpDownButtonEnableState _enableState =
       UpDownButtonEnableState(true, true);
 
